@@ -184,6 +184,7 @@ _________________________________________________________ -->
 <script src="js/front.js"></script>
 <script src="js/jquery.query-object.js"></script>
 <script src="js/client.js"></script>
+<script src="js/stock.js"></script>
 <script>
 
     $(document).ready(function () {
@@ -204,6 +205,7 @@ _________________________________________________________ -->
             $("#title").text(data.name);
             $("#breadcrumb").text(data.name);
             $("#price").text("$" + data.price.toFixed(2));
+            showLowStockBadge(data.id, $("#price"));
             $("#imageMain").attr("src", data.imageUrl[0]);
             $("#buttonCart").attr("onClick", "addToCart(\'" + data.id + "\')");
             var thumbHtml = "";
